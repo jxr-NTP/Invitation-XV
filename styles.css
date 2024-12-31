@@ -1,0 +1,383 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+
+/* Fondo general en degradado */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #421c60, #6b248f); /* Degradado */
+    font-family: 'Poppins', sans-serif;
+    color: #4a256d;
+}
+
+.main-content {
+    display: none;
+}
+
+/* Mensaje para modo vertical */
+.orientation-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    color: #333;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mostrar mensaje en modo vertical */
+body.vertical .orientation-message {
+    display: block;
+}
+
+/* Mostrar contenido en modo horizontal */
+body.horizontal .main-content {
+    display: block;
+}
+
+/* Contenedores ajustados al centro */
+.container {
+    max-width: 600px; /* Ancho reducido */
+    margin: 40px auto; /* Centrados en la página */
+    opacity: 0;
+    transform: translateY(50px); /* Comienzan un poco más abajo */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Tiempo aumentado para suavidad */
+    background: #fdd835; /* Fondo blanco sólido */
+    border: 2px solid #d5a6e6; /* Borde rosado pastel */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombras más marcadas */
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Contenedores visibles al desplazarse */
+.container.visible {
+    opacity: 1;
+    transform: translateY(0); /* Se posicionan correctamente */
+}
+
+/* Estilo del marco */
+.princess-frame {
+    display: inline-block;
+    padding: 20px;
+    background: linear-gradient(to bottom, #f9c6ff, #f5a4e6);
+    border: 5px solid #ffccf2;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Coronas decorativas */
+.princess-frame::before, 
+.princess-frame::after {
+    content: "👑";
+    position: absolute;
+    font-size: 2rem;
+    color: #ffccf2;
+}
+
+/* Ubicación de las coronas */
+.princess-frame::before {
+    top: -10px;
+    left: 10px;
+}
+.princess-frame::after {
+    top: -10px;
+    right: 10px;
+}
+
+/* Imagen dentro del marco */
+.princess-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 3px solid #ffffff;
+}
+
+/* Estilo para el contenedor de Spotify */
+.spotify-container {
+    background-color: #4a256d; /* Fondo morado oscuro */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras más suaves */
+}
+
+.map-container {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    max-width: 400px; /* Define un ancho máximo para pantallas más grandes */
+    height: 250px; /* Ajusta la altura según el diseño */
+    margin: 0 auto; /* Centra el mapa en su contenedor */
+    overflow: hidden; /* Evita que el contenido excedente genere scroll */
+    border-radius: 10px; /* (Opcional) Añade bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* (Opcional) Añade sombra para estilo */
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        max-width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+        height: 200px; /* Reduce la altura en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        height: 150px; /* Altura más pequeña en dispositivos muy estrechos */
+    }
+}
+
+/* Fotos estilo sombra y salto */
+.photo-pm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #f9e4ff, #fce4e6);
+    border-radius: 20px;
+    border: 3px solid #ffccf2;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imágenes de la foto */
+.pm-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en la foto */
+.pm-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Galería estilo collage con imágenes más grandes */
+.collage-gallery {
+    position: relative;
+    height: 500px; /* Altura ajustada */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.collage-item {
+    position: absolute;
+    width: 160px; /* Aumentado desde 120px */
+    height: 160px;
+    transform: rotate(calc(-10deg + 20deg * var(--random)));
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Posiciones ajustadas para mayor tamaño */
+.collage-item:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+.collage-item:nth-child(2) {
+    top: 50px;
+    left: 150px;
+}
+.collage-item:nth-child(3) {
+    top: 180px;
+    left: 230px;
+}
+.collage-item:nth-child(4) {
+    top: 300px;
+    left: 370px;
+}
+.collage-item:nth-child(5) {
+    top: 90px;
+    left: 390px;
+}
+.collage-item:nth-child(6) {
+    top: 260px;
+    left: 210px;
+}
+/* Nuevas posiciones para rellenar el collage */
+.collage-item:nth-child(7) {
+    top: 130px;
+    left: 70px;
+}
+
+.collage-item:nth-child(8) {
+    top: 250px;
+    left: 50px;
+}
+
+.collage-item:nth-child(9) {
+    top: 20px;
+    left: 300px;
+}
+
+.collage-item:nth-child(10) {
+    top: 200px;
+    left: 390px;
+}
+
+.collage-item:nth-child(11) {
+    top: 350px;
+    left: 250px;
+}
+
+/* Hover para resaltar imágenes */
+.collage-item:hover {
+    transform: scale(1.2) rotate(0deg);
+    z-index: 10;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Encabezados */
+header {
+    background-color: rgba(250, 223, 255, 0.8); /* Rosado pastel translúcido */
+    color: #4a256d; /* Morado */
+    padding: 20px 0;
+    font-family: 'Cinzel', serif; /* Fuente decorativa para encabezados */
+    border-bottom: 5px solid #fdd835; /* Detalle dorado */
+}
+
+h1, h2 {
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Toque mágico */
+}
+
+h1 {
+    font-size: 3.5em;
+    font-family: 'Cinzel', serif; /* Fuente decorativa */
+}
+
+h2 {
+    font-size: 2.5em;
+    font-family: 'Dancing Script', cursive; /* Fuente cursiva */
+}
+
+h3 {
+    font-size: 2.5em;
+    font-family: 'Cinzel', serif; /* Fuente cursiva */
+}
+
+p {
+    font-family: 'Dancing Script', cursive; /* Fuente cursiva */
+}
+
+.p-countdown {
+    font-size: 1.5em;
+}
+
+/* Pantalla de bienvenida */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #421c60, #6b248f); /* Fondo degradado */
+    z-index: 10; /* Asegura que esté sobre todo */
+    color: #fdd835; /* Texto dorado */
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#welcome-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Botón */
+.btn-custom {
+    background-color: #fdd835; /* Color dorado */
+    border: none;
+    border-radius: 10px;
+    color: #421c60; /* Texto morado */
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Cinzel', serif; /* Fuente decorativa */
+}
+
+.btn-custom:hover {
+    background-color: #e0c020; /* Dorado más oscuro */
+}
+
+/* Transiciones suaves */
+.transition {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Personalización de texto */
+.text-center {
+    font-family: 'Poppins', sans-serif;
+    color: #4a256d; /* Morado */
+}
+
+/* Modificar cuenta regresiva */
+.countdown {
+    font-size: 2em;
+    color: #fdd835; /* Dorado */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Sombras */
+    font-family: 'Dancing Script', cursive; /* Fuente cursiva */
+}
+
+/* Contenedor de las lámparas */
+#lantern-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Animación de flotación con curvas */
+@keyframes float-up {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(-20px, -25vh) rotate(-2deg); /* Mueve a la izquierda */
+        opacity: 1;
+    }
+    50% {
+        transform: translate(20px, -50vh) rotate(2deg); /* Mueve a la derecha */
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-10px, -80vh) rotate(-1deg); /* Regresa a la izquierda */
+        opacity: 1; /* Mantiene opacidad completa */
+    }
+    100% {
+        transform: translate(0, -120vh) rotate(0deg);
+        opacity: 0; /* Se desvanece completamente */
+    }
+}
+
+.lantern {
+    position: absolute;
+    animation: float-up 10s ease-in-out infinite; /* Duración ajustada a 10s */
+}

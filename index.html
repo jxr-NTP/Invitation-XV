@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV - Jaqueline</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Archivo CSS personalizado -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Pantalla de bienvenida -->
+    <div id="welcome-screen" class="text-center">
+        <h1 class="display-3">Bienvenido</h1>
+        <button class="btn btn-custom btn-lg mt-4" onclick="openInvitation()">Abrir invitación</button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div id="main-content">
+        <!-- Encabezado -->
+        <header class="text-center">
+            <h1>Mis XV</h1>
+            <h2>Jaqueline</h2>
+            <p class="p-countdown">Sábado 15 de marzo del 2025</p>
+        </header>
+
+        <!-- Contenedor para linternas flotantes -->
+        <div id="lantern-container"></div>
+
+        <!-- Imagen -->
+        <div class="container my-4 text-center">
+            <div class="princess-frame">
+                <img src="img/1.jpg" alt="Quinceañera" class="princess-image">
+            </div>
+        </div>
+
+        <!-- Canción -->
+        <div class="container my-4 text-center">
+            <h3>Escucha mi canción</h3>
+            <div class="text-center py-3"><iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/21Ullb4TU8qMsQd0Iselng?utm_source=generator&theme=0"
+                    width="100%" height="152" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe></div>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="container my-4 text-center">
+            <p class="p-countdown">
+                Hay momentos inolvidables que se atesoran en el corazón para siempre, por esa razón, quiero que
+                compartas conmigo este día tan especial.
+            </p>
+        </div>
+
+        <!-- Padres -->
+        <div class="container my-4 text-center">
+            <p class="p-countdown">
+                Con la bendición de Dios y de mis padres <br> Salvador Carlos Flores Peinado <br> y <br> Aurora
+                Yessica Estrada López.
+            </p>
+            <div class="bg-light p-4 rounded shadow-sm">
+                <img src="img/p-m2.jpg" alt="Foto p-m" class="pm-image">
+            </div>
+        </div>
+
+        <!-- Ubicación -->
+        <div class="container my-4 text-center">
+            <h3>Ubicación</h3>
+            <p class="p-countdown">Recuerda que es el sábado 15 de marzo del 2025</p>
+            <p class="p-countdown">La misa será en la Parroquia de Santiago Apóstol de Teyahualco</p>
+            <p class="p-countdown">A las 15:00</p>
+            <div class="text-center bg-light p-3 rounded map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d939.3050026884464!2d-99.1261372!3d19.6606169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f45cf8aab9a9%3A0xdd0e69b2bbbe5206!2sParroquia%20de%20Santiago%20Ap%C3%B3stol%20de%20Teyahualco!5e0!3m2!1ses!2smx!4v1733369610934!5m2!1ses!2smx"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a href="https://maps.app.goo.gl/EQNom8b38SSBZXdFA" target="_blank" class="btn btn-custom">Abrir</a>
+            </div>
+        </div>
+
+        <!-- Fiesta -->
+        <div class="container my-4 text-center">
+            <h3>La fiesta será en:</h3>
+            <div class="text-center bg-light p-3 rounded map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d234.7862874644038!2d-99.12189440370489!3d19.687890509895343!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1734985197405!5m2!1ses-419!2smx"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a href="https://maps.app.goo.gl/CujhxnTRhcY2rDEb7" target="_blank" class="btn btn-custom">Abrir</a>
+            </div>
+        </div>
+
+        <!-- Cuenta regresiva -->
+        <div class="container my-4 text-center">
+            <div class="bg-light p-4 rounded shadow-sm countdown">
+                <p><strong>Cuenta regresiva:</strong></p>
+                <p id="countdown-timer">[Cargando...]</p>
+            </div>
+        </div>
+
+        <!-- Galería estilo collage -->
+        <div class="container my-4 text-center">
+            <div class="collage-gallery">
+                <div class="collage-item">
+                    <img src="img/7.jpg" alt="Imagen 1">
+                </div>
+                <div class="collage-item">
+                    <img src="img/2.jpg" alt="Imagen 2">
+                </div>
+                <div class="collage-item">
+                    <img src="img/3.jpg" alt="Imagen 3">
+                </div>
+                <div class="collage-item">
+                    <img src="img/4.jpg" alt="Imagen 4">
+                </div>
+                <div class="collage-item">
+                    <img src="img/5.jpg" alt="Imagen 5">
+                </div>
+                <div class="collage-item">
+                    <img src="img/6.jpg" alt="Imagen 6">
+                </div>                
+                <div class="collage-item">
+                    <img src="img/8.jpg" alt="Imagen 7">
+                </div>
+                <div class="collage-item">
+                    <img src="img/9.jpg" alt="Imagen 8">
+                </div>
+                <div class="collage-item">
+                    <img src="img/10.jpg" alt="Imagen 9">
+                </div>
+                <div class="collage-item">
+                    <img src="img/11.jpg" alt="Imagen 12">
+                </div>
+                <div class="collage-item">
+                    <img src="img/12.jpg" alt="Imagen 11">
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmación -->
+        <div class="container my-4 text-center">
+            <p class="p-countdown">
+                Favor de confirmar asistencia con un mensaje.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="orientation-message">
+        Por favor, rota tu dispositivo a <strong>modo horizontal</strong> para visualizar correctamente esta página.
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Archivo JS personalizado -->
+    <script src="script.js"></script>
+</body>
+
+</html>
